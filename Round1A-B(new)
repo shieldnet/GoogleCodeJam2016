@@ -1,0 +1,54 @@
+#include <iostream>
+#include <fstream>
+#include <cstring>
+#include <vector>
+
+#define SIZE 50
+
+int input[SIZE][SIZE * 2 - 1] = { 0, };
+int isAlone[2501] = { 0, };
+int T = 0;
+int N = 0;
+
+
+using namespace std;
+// long long 을 사용할 것!
+int main() {
+
+	int row = 0, col = 0, cnt = 0, answer_num = 1;
+
+	ifstream fin;
+	ofstream fout;
+	vector<int> answer;
+
+	fin.open("B-small-attempt0.in");
+	fout.open("result_large.out");
+	fin >> T;
+
+	while (T--) {
+
+		fin >> N;
+		//input
+		for (row = 0; row < 2 * N - 1; row++) {
+			for (col = 0; col < N; col++) {
+
+				fin >> input[row][col];
+				isAlone[input[row][col]]++;
+			}
+		}
+		fout << "Case #" << answer_num;
+		for (cnt = 1; cnt < 2501; cnt++) {
+			if (isAlone[cnt] == 1) {
+				fout << cnt << " ";
+			}
+		}
+		fout << endl;
+		memset(isAlone, 0, sizeof(int) * 2501);
+		answer.clear();
+	}
+		
+
+
+
+	return 0;
+}
