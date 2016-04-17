@@ -3,7 +3,7 @@
 #include <cstring>
 #include <vector>
 
-#define SIZE 50
+#define SIZE 200
 
 int input[SIZE][SIZE * 2 - 1] = { 0, };
 int isAlone[2501] = { 0, };
@@ -21,7 +21,7 @@ int main() {
 	ofstream fout;
 	vector<int> answer;
 
-	fin.open("B-small-attempt0.in");
+	fin.open("B-large-practice.in");
 	fout.open("result_large.out");
 	fin >> T;
 
@@ -36,15 +36,20 @@ int main() {
 				isAlone[input[row][col]]++;
 			}
 		}
-		fout << "Case #" << answer_num;
-		for (cnt = 1; cnt < 2501; cnt++) {
-			if (isAlone[cnt] == 1) {
+		
+	
+		fout << "Case "<<"#" <<answer_num<<": ";
+		for (cnt = 0; cnt < 2501; cnt++) {
+
+			if ((isAlone[cnt]%2) == 1) {
 				fout << cnt << " ";
 			}
+
 		}
 		fout << endl;
 		memset(isAlone, 0, sizeof(int) * 2501);
 		answer.clear();
+		answer_num++;
 	}
 		
 
