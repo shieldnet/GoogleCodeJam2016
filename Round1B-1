@@ -1,0 +1,234 @@
+#include <iostream>
+#include <fstream>
+#include <string>
+#include <vector>
+
+
+int T;
+vector<char> str;
+
+
+int main(){
+    
+    ifstream fin;
+	ofstream fout;
+	
+    fin.open("input.in");
+    fout.open("answer.out");
+    
+    //input T
+    fin >> T;
+    
+    while(T--){
+        
+        fin >> str;
+        
+        
+        
+        
+        
+        
+    }
+    
+    
+    return 0;
+}
+
+int howMany(int num){
+    
+    int cnt = 0, find = 0;
+    int one = 0, two = 0, three=0,four=0,five=0,six=0,seven=0,eight=0,nine=0;
+    
+    //IF NUM = 0
+    if(num==0){
+        for(cnt = 0;cnt<str.length();cnt++){
+            //Delete Zero
+            if(str[cnt] == 'Z'){
+                for(find = 0 ; find < str.length();find++){
+                    if(str[find] == 'E'){ str[find] = NULL; 
+                        break;
+                    }
+                }
+                for(find = 0 ; find < str.length();find++){
+                    if(str[find] == 'R'){ str[find] = NULL; 
+                        break;
+                    }
+                }
+                for(find = 0 ; find < str.length();find++){
+                    if(str[find] == 'O'){ str[find] = NULL; 
+                        break;
+                    }
+                }
+            }
+        }
+    }
+    
+    if(num==2){
+        for(cnt = 0;cnt<str.length();cnt++){
+            //Delete Zero
+            if(str[cnt] == 'W'){
+                for(find = 0 ; find < str.length();find++){
+                    if(str[find] == 'T'){ str[find] = NULL; 
+                        break;
+                    }
+                }
+                for(find = 0 ; find < str.length();find++){
+                    if(str[find] == 'O'){ str[find] = NULL; 
+                        break;
+                    }
+                }
+            }
+        }
+    }
+    
+    if(num==4){
+        for(cnt = 0;cnt<str.length();cnt++){
+            //Delete Zero
+            if(str[cnt] == 'U'){
+                for(find = 0 ; find < str.length();find++){
+                    if(str[find] == 'F'){ str[find] = NULL; 
+                        break;
+                    }
+                }
+                for(find = 0 ; find < str.length();find++){
+                    if(str[find] == 'O'){ str[find] = NULL; 
+                        break;
+                    }
+                }
+                for(find = 0 ; find < str.length();find++){
+                    if(str[find] == 'R'){ str[find] = NULL; 
+                        break;
+                    }
+                }
+            }
+        }
+    }
+    
+    if(num==6){
+        for(cnt = 0;cnt<str.length();cnt++){
+            //Delete Zero
+            if(str[cnt] == 'X'){
+                for(find = 0 ; find < str.length();find++){
+                    if(str[find] == 'S'){ str[find] = NULL; 
+                        break;
+                    }
+                }
+                for(find = 0 ; find < str.length();find++){
+                    if(str[find] == 'I'){ str[find] = NULL; 
+                        break;
+                    }
+                }
+            }
+        }
+    }
+    
+    if(num==7){
+        for(cnt = 0;cnt<str.length();cnt++){
+            //Delete Zero
+            if(str[cnt] == 'S'){
+                for(find = 0 ; find < str.length();find++){
+                    if(str[find] == 'E'){ str[find] = NULL; 
+                        break;
+                    }
+                }
+                for(find = 0 ; find < str.length();find++){
+                    if(str[find] == 'V'){ str[find] = NULL; 
+                        break;
+                    }
+                }
+                for(find = 0 ; find < str.length();find++){
+                    if(str[find] == 'E'){ str[find] = NULL; 
+                        break;
+                    }
+                }
+                for(find = 0 ; find < str.length();find++){
+                    if(str[find] == 'N'){ str[find] = NULL; 
+                        break;
+                    }
+                }
+            }
+        }
+    }
+    
+    if(num==5){
+        for(cnt = 0;cnt<str.length();cnt++){
+            //Delete Zero
+            if(str[cnt] == 'V'){
+                for(find = 0 ; find < str.length();find++){
+                    if(str[find] == 'F'){ str[find] = NULL; 
+                        break;
+                    }
+                }
+                for(find = 0 ; find < str.length();find++){
+                    if(str[find] == 'I'){ str[find] = NULL; 
+                        break;
+                    }
+                }
+
+                for(find = 0 ; find < str.length();find++){
+                    if(str[find] == 'E'){ str[find] = NULL; 
+                        break;
+                    }
+                }
+            }
+        }
+    }
+    
+    if(num==8){
+        for(cnt = 0;cnt<str.length();cnt++){
+            //Delete Zero
+            if(str[cnt] == 'G'){
+                for(find = 0 ; find < str.length();find++){
+                    if(str[find] == 'E'){ str[find] = NULL; 
+                        break;
+                    }
+                }
+                for(find = 0 ; find < str.length();find++){
+                    if(str[find] == 'I'){ str[find] = NULL; 
+                        break;
+                    }
+                }
+                for(find = 0 ; find < str.length();find++){
+                    if(str[find] == 'H'){ str[find] = NULL; 
+                        break;
+                    }
+                }
+                for(find = 0 ; find < str.length();find++){
+                    if(str[find] == 'T'){ str[find] = NULL; 
+                        break;
+                    }
+                }
+            }
+        }
+    }
+    
+    if(num==3){
+        for(cnt = 0;cnt<str.length();cnt++){
+            //Delete Zero
+            if(str[cnt] == 'H'){
+                for(find = 0 ; find < str.length();find++){
+                    if(str[find] == 'T'){ str[find] = NULL; 
+                        break;
+                    }
+                }
+                for(find = 0 ; find < str.length();find++){
+                    if(str[find] == 'R'){ str[find] = NULL; 
+                        break;
+                    }
+                }
+                for(find = 0 ; find < str.length();find++){
+                    if(str[find] == 'E'){ str[find] = NULL; 
+                        break;
+                    }
+                }
+                for(find = 0 ; find < str.length();find++){
+                    if(str[find] == 'E'){ str[find] = NULL; 
+                        break;
+                    }
+                }
+            }
+        }
+    }
+    
+    
+}
