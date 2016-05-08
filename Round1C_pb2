@@ -1,0 +1,87 @@
+#include <iostream>
+#include <fstream>
+
+using namespace std;
+// long long 을 사용할 것!
+
+long long Permutation(int n, int k);
+long long sumofPermutation(int);
+
+int main() {
+	int T;
+	int casenum = 1;
+	long long B, M;
+
+	ifstream fin;
+	ofstream fout;
+
+	fin.open("A-large.in");
+	fout.open("result_large.out");
+
+	//input T
+	fin >> T;
+
+	while (T--){
+		fout << "Case #" << casenum << ": ";
+		fin >> B>>M;
+
+		//b=2
+		if (B == 2){
+			if (M == 1){
+				fout << "POSSIBLE" << endl;
+				fout << "01" << endl << "00"<<endl;
+			}
+			else{
+				fout << "IMPOSSIBLE";
+			}
+			casenum++;
+			continue;
+		}
+
+		//b>2
+		if (M > sumofPermutation(B)){
+			fout << "IMPOSSIBLE" << endl;
+			continue;
+		}
+
+
+				
+
+
+
+
+		
+		fout << endl;
+		casenum++;
+	}
+
+
+
+
+	fin.close();
+	fout.close();
+	return 0;
+
+}
+
+long long Permutation(int n, int k) {
+	long long ret = 1, idx;
+
+	for (idx = n - k + 1; idx <= n; idx++) {
+		ret *= idx;
+	}
+
+	return ret;
+
+}
+
+long long sumofPermutation(int B){
+
+	long long sum = 0;
+
+	for (int cnt = 1; cnt < B - 2; cnt++){
+		sum += Permutation(B - 2, cnt);
+	}
+
+	return sum;
+}
