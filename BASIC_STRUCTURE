@@ -1,0 +1,30 @@
+#include <iostream>
+#include <fstream>
+
+using namespace std;
+// long long 을 사용할 것!
+int main() {
+	int T;
+	ifstream fin;
+	ofstream fout;
+
+	fin.open("A-large.in");
+	fout.open("result_large.out");
+
+	//input T
+	cin >> T;
+
+	while (T--){
+
+
+
+	}
+
+
+
+
+	fin.close();
+	fout.close();
+	return 0;
+
+}
