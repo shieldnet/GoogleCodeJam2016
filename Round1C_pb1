@@ -1,0 +1,152 @@
+#include <iostream>
+#include <fstream>
+#include <cstring>
+
+int numbers[26] = { 0, };
+char code[26] = { 0, };
+
+int sum();
+bool isAbsoluteMajor();
+bool isLeftTwo();
+bool isAllOne();
+
+using namespace std;
+// long long 을 사용할 것!
+int main() {
+	int T;
+	int N;
+	int casenum = 1;
+	ifstream fin;
+	ofstream fout;
+
+	fin.open("A-small-attempt2.in");
+	fout.open("result_large111.out");
+
+	
+		
+	//input T
+	fin >> T;
+	while (T--) {
+		for (int cnt1 = 65; cnt1 <= 90; cnt1++){
+			code[cnt1 - 65] = cnt1;
+		}
+		fin >> N;
+		for (int cnt = 0; cnt < N; cnt++){
+			fin>>numbers[cnt];
+		}
+
+
+		fout << "Case #" << casenum << ": ";
+		//A = 65, Z=90
+
+		if (N == 2){
+
+			while (sum() != 0){
+				fout << "AB" << ' ';
+				numbers[0]--;
+				numbers[1]--;
+			}
+		}
+
+		else{
+			while (sum() != 0){
+
+				if (isLeftTwo()){
+					for (int cnt3 = 0; cnt3 < 26; cnt3++){
+						if (numbers[cnt3] == 0){
+							continue;
+						}
+						else{
+							fout << code[cnt3];
+							numbers[cnt3]--;
+						}
+
+
+
+
+					}//end of for
+					fout << ' ';
+				}
+
+				for (int order = 0; order < N; order++){
+					if (numbers[order] == 0){
+						continue;
+					}
+					numbers[order]--;
+
+					if (isAbsoluteMajor()){
+						numbers[order]++;
+						continue;
+
+					}
+
+					else{
+						fout << code[order];
+					}
+					
+				}
+
+			}
+		}
+		
+		memset(numbers, 0, sizeof(int)* 30);
+		fout << endl;
+		casenum++;
+	}
+	
+	return 0;
+
+}
+
+int sum(){
+	int cnt = 0;
+	int ret = 0;
+	for (cnt = 0; cnt < 26; cnt++){
+		ret += numbers[cnt];
+	}
+
+	return ret;
+}
+
+bool isAbsoluteMajor(){
+	
+	int cnt = 0;
+	if (sum() == 1){
+		return false;
+	}
+
+	for (cnt = 0; cnt < 26; cnt++){
+		if (((double)numbers[cnt] / sum()) > 0.5){
+			return true;
+		}
+	}
+	return false;
+}
+
+bool isLeftTwo(){
+	int cnt = 0;
+	int judge = 0;
+	for (cnt = 0; cnt < 26; cnt++){
+		if (numbers[cnt] != 0){
+			judge++;
+		}
+	}
+	if (judge == 2){
+		return true;
+	}
+	else return false;
+}
+
+bool isAllOne(){
+	int cnt = 0;
+
+	for (cnt = 0; cnt < 26; cnt++){
+
+		if (numbers[cnt] != 1){
+			return false;
+		}
+
+	}
+	return true;
+
+}
