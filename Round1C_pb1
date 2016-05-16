@@ -81,7 +81,7 @@ int main() {
 					}
 
 					else{
-						fout << code[order];
+						fout << code[order]<<' ';
 					}
 					
 				}
@@ -112,7 +112,7 @@ bool isAbsoluteMajor(){
 	
 	int cnt = 0;
 	if (sum() == 1){
-		return false;
+		return true; //Fuck... if Sum= 1, it is absolutely absMajor --;;
 	}
 
 	for (cnt = 0; cnt < 26; cnt++){
